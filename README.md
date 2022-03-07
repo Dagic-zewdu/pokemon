@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Title
+# Pokemon Capstone project
 
 > Project description paragraph with 30 words. 
 
