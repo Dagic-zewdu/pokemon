@@ -10,3 +10,6 @@
 	--orange: #ffb72b;
 	--background-color: #f7f7f7;
 }
+body {
+	background-color: var(--background-color);
+}
