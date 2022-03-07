@@ -4,12 +4,8 @@
   "description": "If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js"
-=======
-    "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> features
   },
   "repository": {
     "type": "git",
