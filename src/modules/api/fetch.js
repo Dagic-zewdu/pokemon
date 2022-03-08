@@ -6,7 +6,8 @@ const baseUrl = axios.create({
 });
 
 const getPokemonList = async (offset, limit = 20) => {
-	const res = await baseUrl.get(`?offset${offset}=&limit=${limit}`);
+	const res = await baseUrl.get(`?offset${offset}=&limit=20`);
+	console.log(res.data);
 	return res.data;
 };
 

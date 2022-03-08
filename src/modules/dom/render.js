@@ -2,8 +2,8 @@ import { getPokemonList, getPokemon, getPokemonByHabitat } from '../api/fetch';
 
 const allCards = document.querySelector('.all-cards');
 
-const fillAllCards = async () => {
-	const { results } = await getPokemonList(20);
+const fillAllCards = async num => {
+	const { results } = await getPokemonList(num);
 	results.forEach(async result => {
 		const data = await getPokemon(result.name);
 		const html = `<div class="card">
