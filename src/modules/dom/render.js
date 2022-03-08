@@ -30,10 +30,3 @@ const fillAllCards = async () => {
 };
 
 export { fillAllCards };
-
-//  ${
-//     data.types.forEach(el => {
-//         console.log(`<span>${el.type.name}</span>`);
-//         return `<span>${el.type.name}</span>`;
-//     })
-// }
