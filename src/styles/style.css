@@ -11,6 +11,38 @@
 	--background-color: #495371;
 	--card-color: #21325e;
 }
+img {
+	display: block;
+}
 body {
 	background-color: var(--background-color);
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin: 0.25rem auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 96vw;
+	z-index: 10;
+}
+.header select {
+	width: 5rem;
+	height: 1.5rem;
+}
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.logo img {
+	height: 3rem;
+	width: 3rem;
+}
+.logo span {
+	font-weight: bold;
+	font-size: 1.5rem;
+	color: var(--orange);
 }
