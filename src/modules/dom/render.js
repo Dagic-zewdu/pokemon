@@ -3,8 +3,7 @@ import { getPokemonList, getPokemon, getPokemonByHabitat } from '../api/fetch';
 
 const allCards = document.querySelector('.all-cards');
 
-const fillAllCards = async num => {
-	const { results } = await getPokemonList(num);
+const fillAllCards = async results => {
 	results.forEach(async result => {
 		const data = await getPokemon(result.name);
 		const html = `<div class="card">
@@ -19,7 +18,7 @@ const fillAllCards = async num => {
 					<div class="info">
 						<h3 class="title">${result.name}</h3>
 						<div class="category">
-                       <span class=${data.types[0].type.name}>${data.types[0].type.name}</span>
+                        ${types(data.types)}
 						</div>
 					</div>
 					<div class="likes">💝</div>
@@ -27,6 +26,14 @@ const fillAllCards = async num => {
 			</div>`;
 		allCards.insertAdjacentHTML('beforeend', html);
 	});
+};
+
+const types = arr => {
+	let html = '';
+	arr.forEach(el => {
+		html += `<span class=${el.type.name}>${el.type.name}</span>`;
+	});
+	return html;
 };
 
 export { fillAllCards };

@@ -42,6 +42,7 @@ main {
 	font-size: 1.2rem;
 	letter-spacing: 2px;
 	text-transform: capitalize;
+	margin-right: 0.25rem;
 }
 
 /* Medium devices (landscape tablets, 768px and up)  */

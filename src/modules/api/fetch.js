@@ -5,7 +5,7 @@
 // 	baseURL: 'https://pokeapi.co/api/v2/pokemon',
 // });
 
-const getPokemonList = async offset => {
+const getPokemonList = async (offset = 20) => {
 	const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`);
 	const data = await res.json();
 	return data;
