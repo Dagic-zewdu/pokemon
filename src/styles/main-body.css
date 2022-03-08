@@ -63,18 +63,16 @@ main {
 
 .grass {
 	background-color: lightgreen;
-	color: white;
 }
 .normal {
-	background-color: rgb(12, 184, 236);
-	color: white;
+	background-color: rgb(226, 231, 177);
 }
 .fairy {
 	background-color: white;
 	color: black;
 }
 .fire {
-	background-color: rgb(184, 84, 84);
+	background-color: red;
 	color: white;
 }
 .poison {
@@ -82,8 +80,7 @@ main {
 	color: white;
 }
 .electric {
-	background-color: rgb(163, 163, 83);
-	color: white;
+	background-color: rgb(233, 233, 17);
 }
 .ground {
 	background-color: burlywood;
@@ -94,4 +91,35 @@ main {
 }
 .bug {
 	background-color: lightpink;
+}
+.ghost {
+	background-color: grey;
+}
+.rock {
+	background-color: rgb(63, 18, 18);
+	color: white;
+}
+.steel {
+	background-color: silver;
+}
+.ice {
+	background-color: rgb(12, 184, 236);
+}
+.dark {
+	background-color: rgba(0, 0, 0, 0.418);
+	color: white;
+}
+.dragon {
+	background-color: rgb(184, 84, 84);
+	color: white;
+}
+.psychic {
+	background-color: rgba(48, 2, 109, 0.418);
+	color: white;
+}
+.fighting {
+	background-color: teal;
+}
+.flying {
+	background-color: skyblue;
 }

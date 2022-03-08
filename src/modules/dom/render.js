@@ -1,4 +1,5 @@
 import { getPokemonList, getPokemon, getPokemonByHabitat } from '../api/fetch';
+// import { scroll } from '../../app.js';
 
 const allCards = document.querySelector('.all-cards');
 
