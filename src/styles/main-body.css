@@ -1,0 +1,37 @@
+
+main {
+	min-height: 100vh;
+	padding: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 100px;
+	margin-bottom: 30px;
+}
+.card {
+  height: 450px;
+  background-color: var(--card-color);  
+  border-radius: 10px;
+  opacity: 0.9;
+  margin: 10px;
+  width: 100%;
+}
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .card {
+      width: 100%;
+    }
+  }
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+	  .card {
+      width: 47%;
+    }
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+  .card {
+    max-width: 20rem;
+  }  
+} 

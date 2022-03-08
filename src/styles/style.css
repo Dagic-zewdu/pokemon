@@ -25,9 +25,6 @@ footer {
 	background-color: var(--footer-color);
 }
 
-main {
-	min-height: 100vh;
-}
 .footer-logo-img {
 	height: 80px;
 	width: 80px;
@@ -95,3 +92,4 @@ main {
 .white {
 	color: white;
 }
+
