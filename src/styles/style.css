@@ -10,6 +10,7 @@
 	--orange: #ffb72b;
 	--background-color: #495371;
 	--card-color: #21325e;
+	--footer-color:#7882a4;
 }
 
 body {
@@ -19,23 +20,75 @@ body {
 footer {
 	display:flex;
 	padding: 10px;
+	justify-content: center;
+	background-color: var(--footer-color);
+  
 }
 
-.footer-img-container {
-  flex: 1;
-}
-
-.footer-desc-container {
-  flex: 2;
-}
-
-.footer-links-container {
-	flex:1
-}
-.main {
+main {
  min-height: 100vh;
 }
 .footer-logo-img {
   height: 80px;
   width: 80px;
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin: 0.25rem auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 96vw;
+	z-index: 10;
+}
+.header select {
+	width: 5rem;
+	height: 1.5rem;
+}
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.logo img {
+	height: 3rem;
+	width: 3rem;
+}
+.logo span {
+	font-weight: bold;
+	font-size: 1.5rem;
+	color: var(--orange);
+}
+
+.contributor-list {
+ list-style-type: none;
+ display: flex;	
+}
+
+.profile-photo {
+  height: 60px;
+  width: 60px; 
+  object-fit: cover;
+  border-radius: 30px;	
+}
+.footer-links-container {
+	margin-left: 20px;
+   display: flex;
+   align-items: center;
+   margin-left: 20px;
+}
+
+.mx-10 {
+  margin-right: 10px;
+  margin-left:10px
+}
+
+.my-10 {
+	margin-top: 10px;
+	margin-bottom:10px
+}
+.white {
+  color: white;
 }
