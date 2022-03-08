@@ -10,6 +10,7 @@
 	--orange: #ffb72b;
 	--background-color: #495371;
 	--card-color: #21325e;
+	--header: #7882a4;
 }
 img {
 	display: block;
@@ -20,16 +21,19 @@ body {
 .header {
 	display: flex;
 	justify-content: space-between;
-	margin: 0.25rem auto;
+	align-items: center;
+	margin: auto;
 	position: fixed;
+	padding: 0.25rem 1rem;
 	top: 0;
 	left: 0;
 	right: 0;
-	width: 96vw;
+	width: 100vw;
 	z-index: 10;
+	background-color: var(--header);
 }
 .header select {
-	width: 5rem;
+	width: 8rem;
 	height: 1.5rem;
 }
 .logo {
