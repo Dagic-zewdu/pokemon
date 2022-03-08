@@ -11,12 +11,26 @@
 	--background-color: #495371;
 	--card-color: #21325e;
 	--header: #7882a4;
+	--footer-color: #7882a4;
 }
-img {
-	display: block;
-}
+
 body {
 	background-color: var(--background-color);
+}
+
+footer {
+	display: flex;
+	padding: 10px;
+	justify-content: center;
+	background-color: var(--footer-color);
+}
+
+main {
+	min-height: 100vh;
+}
+.footer-logo-img {
+	height: 80px;
+	width: 80px;
 }
 .header {
 	display: flex;
@@ -49,4 +63,35 @@ body {
 	font-weight: bold;
 	font-size: 1.5rem;
 	color: var(--orange);
+}
+
+.contributor-list {
+	list-style-type: none;
+	display: flex;
+}
+
+.profile-photo {
+	height: 60px;
+	width: 60px;
+	object-fit: cover;
+	border-radius: 30px;
+}
+.footer-links-container {
+	margin-left: 20px;
+	display: flex;
+	align-items: center;
+	margin-left: 20px;
+}
+
+.mx-10 {
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.my-10 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.white {
+	color: white;
 }
