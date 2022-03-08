@@ -8,9 +8,34 @@
 :root {
 	--light-yellow: #ffe61b;
 	--orange: #ffb72b;
-	--background-color: #f7f7f7;
+	--background-color: #495371;
+	--card-color: #21325e;
 }
 
 body {
 	background-color: var(--background-color);
+}
+
+footer {
+	display:flex;
+	padding: 10px;
+}
+
+.footer-img-container {
+  flex: 1;
+}
+
+.footer-desc-container {
+  flex: 2;
+}
+
+.footer-links-container {
+	flex:1
+}
+.main {
+ min-height: 100vh;
+}
+.footer-logo-img {
+  height: 80px;
+  width: 80px;
 }
