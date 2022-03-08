@@ -18,7 +18,7 @@ const fillAllCards = async () => {
 					<div class="info">
 						<h3 class="title">${result.name}</h3>
 						<div class="category">
-                       <span>${data.types[0].type.name}</span>
+                       <span class=${data.types[0].type.name}>${data.types[0].type.name}</span>
 						</div>
 					</div>
 					<div class="likes">💝</div>

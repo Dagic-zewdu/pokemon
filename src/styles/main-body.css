@@ -29,6 +29,8 @@ main {
 }
 .title {
 	color: white;
+	letter-spacing: 1px;
+	text-transform: capitalize;
 }
 .category {
 	margin-top: 0.5rem;
@@ -36,11 +38,10 @@ main {
 }
 .category span {
 	padding: 0.2rem 0.5rem;
-	background-color: #7882a4;
-	color: white;
 	border-radius: 5px;
 	font-size: 1.2rem;
 	letter-spacing: 2px;
+	text-transform: capitalize;
 }
 
 /* Medium devices (landscape tablets, 768px and up)  */
@@ -58,4 +59,33 @@ main {
 	.card {
 		max-width: 20rem;
 	}
+}
+
+.grass {
+	background-color: lightgreen;
+	color: white;
+}
+.normal {
+	background-color: rgb(12, 184, 236);
+	color: white;
+}
+.fairy {
+	background-color: white;
+	color: black;
+}
+.fire {
+	background-color: rgb(184, 84, 84);
+	color: white;
+}
+.poison {
+	background-color: rgb(133, 69, 133);
+	color: white;
+}
+.electric {
+	background-color: rgb(163, 163, 83);
+	color: white;
+}
+.ground {
+	background-color: burlywood;
+	color: white;
 }
