@@ -8,14 +8,18 @@ main {
 	margin-bottom: 30px;
 }
 .card {
-  height: 450px;
+  height: 300px;
   background-color: var(--card-color);  
   border-radius: 10px;
   opacity: 0.9;
   margin: 10px;
   width: 100%;
 }
-  
+.pokemon-img {
+  height: 9rem;
+  width: 100%;
+  object-fit: cover;
+}
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 600px) {
     .card {

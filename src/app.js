@@ -1,5 +1,5 @@
 import './styles/style.css';
 import './styles/main-body.css';
-import { getPokemons } from './modules/fetch';
+import { getPokemon, getPokemonList } from './modules/api/fetch';
 
-getPokemons();
+getPokemonList();
