@@ -12,6 +12,9 @@ export const likeCard = () => {
 				e.target.innerHTML = '❤️';
 				localStorage.setItem('liked', JSON.stringify(liked));
 				postLikes({ item_id: id });
+				const counter = e.target.nextElementSibling;
+				const count = +counter.textContent;
+				counter.textContent = count + 1;
 			}
 		} else if (e.target.closest('.card')) {
 			const target = e.target.closest('.card').dataset.id;

@@ -1,5 +1,5 @@
-import { getPokemonList, getPokemon, getPokemonByHabitat, getLikes } from '../api/fetch';
-import { likeCard, liked } from './handleLikes';
+import { getPokemon, getLikes } from '../api/fetch';
+import { liked } from './handleLikes';
 
 const allCards = document.querySelector('.all-cards');
 
