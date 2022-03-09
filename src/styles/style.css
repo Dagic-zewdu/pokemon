@@ -34,8 +34,14 @@ body {
 }
 .header select {
 	width: 8rem;
-	height: 1.5rem;
+	height: 2rem;
 	margin-right: 2rem;
+	outline: none;
+	background-color: var(--header);
+	border: 1px solid var(--card-color);
+	border-radius: 4px;
+	color: white;
+	padding-left: 0.5rem;
 }
 .logo {
 	display: flex;
