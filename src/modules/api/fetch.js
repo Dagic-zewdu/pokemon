@@ -32,8 +32,34 @@ const postLikes = async like => {
 	});
 };
 
-const getComments = async () => {};
+const getComments = async id => {
+	try {
+		const res = await fetch(`${invUrl}/comments?item_id=${id}`);
+		const data = await res.json();
+		return data;
+	} catch (err) {
+		throw new Error(err);
+	}
+};
 
-const postComments = async () => {};
+const postComments = async (id, user, comment) => {
+	await fetch(`${invUrl}/comments`, {
+		method: 'POST',
+		headers: { 'Content-type': 'application/json; charset=UTF-8' },
+		body: JSON.stringify({
+			item_id: id,
+			username: user,
+			comment: comment,
+		}),
+	});
+};
 
-export { getPokemonList, getPokemon, getPokemonByHabitat, postLikes, getLikes };
+export {
+	getPokemonList,
+	getPokemon,
+	getPokemonByHabitat,
+	postLikes,
+	getLikes,
+	getComments,
+	postComments,
+};

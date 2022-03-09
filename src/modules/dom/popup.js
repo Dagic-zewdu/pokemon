@@ -1,9 +1,20 @@
-import { getPokemon } from '../api/fetch';
+import { getPokemon, getComments, postComments } from '../api/fetch';
 import { types } from './render';
 const container = document.querySelector('.popup-section');
 
 const renderPopup = async id => {
 	const data = await getPokemon(id);
+	const comments = await getComments(id);
+	console.log(comments);
+	const allComments =
+		comments?.error?.status == 400
+			? 'No comments found'
+			: comments
+					.map(comment => {
+						return `<span class="date">${comment.creation_date}</span> | <span class="username">${comment.username}:</span>
+							<span class="user-message">${comment.comment}</span>`;
+					})
+					.join('');
 	container.innerHTML = '';
 	container.hidden = false;
 	const html = `<div class="popup">
@@ -99,8 +110,7 @@ const renderPopup = async id => {
 					<h3 class="popup-title">Comments</h3>
 					<div class="messages">
 						<p class="messages">
-							<span class="date">date</span> | <span class="username">Username:</span>
-							<span class="user-message">Message</span>
+							${allComments}
 						</p>
 					</div>
 					<form action="post" class="form">
@@ -115,15 +125,31 @@ const renderPopup = async id => {
 	closeBtn.addEventListener('click', () => {
 		container.hidden = true;
 	});
+	const messages = document.querySelector('.messages');
 	const form = document.querySelector('.form');
 	form.addEventListener('submit', async e => {
 		e.preventDefault();
 		const inputName = document.querySelector('.input-name');
-		const inputMessage = document.querySelector('.input-message');
-
+		const inputMessage = document.getElementById('comment');
+		postComments(data.id, inputName.value, inputMessage.value);
+		const html = `<span class="date">${newDate()}</span> | <span class="username">${
+			inputName.value
+		}:</span>
+			<span class="user-message">${inputMessage.value}</span>`;
+		messages.insertAdjacentHTML('beforeend', html);
 		inputName.value = '';
 		inputMessage.value = '';
 	});
 };
 
 export { renderPopup };
+
+{
+	/* <span class="date">date</span> | <span class="username">Username:</span>
+							<span class="user-message">Message</span> */
+}
+
+const newDate = () => {
+	const date = new Date();
+	return date.toISOString().split('T')[0];
+};
