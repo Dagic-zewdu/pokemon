@@ -1,6 +1,8 @@
+import { getPokemon } from '../api/fetch';
 const container = document.querySelector('.popup-section');
 
-const renderPopup = async data => {
+const renderPopup = async id => {
+	const data = await getPokemon(id);
 	container.innerHTML = '';
 	const html = `<div class="popup">
 				<svg class="close-btn" viewBox="0 0 24 24">
@@ -12,7 +14,7 @@ const renderPopup = async data => {
 				<div class="popup-header">
 					<div class="popup-img">
 						<img
-							src=""
+							src="data."
 							alt=""
 						/>
 						<h3 class="popup-title">Pikachu</h3>

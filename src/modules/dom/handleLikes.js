@@ -3,7 +3,7 @@ const allCards = document.querySelector('.all-cards');
 
 const liked = localStorage.getItem('liked') ? JSON.parse(localStorage.getItem('liked')) : [];
 
-export const likeCard = data => {
+export const likeCard = () => {
 	allCards.addEventListener('click', e => {
 		if (e.target.classList.contains('heart')) {
 			const id = +e.target.id;

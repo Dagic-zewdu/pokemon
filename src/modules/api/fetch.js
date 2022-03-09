@@ -7,8 +7,8 @@ const getPokemonList = async (offset = 0) => {
 	return data;
 };
 
-const getPokemon = async name => {
-	const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+const getPokemon = async id => {
+	const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 	const data = await res.json();
 	return data;
 };
