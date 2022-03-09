@@ -32,4 +32,8 @@ const postLikes = async like => {
 	});
 };
 
+const getComments = async () => {};
+
+const postComments = async () => {};
+
 export { getPokemonList, getPokemon, getPokemonByHabitat, postLikes, getLikes };

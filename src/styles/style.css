@@ -117,6 +117,7 @@ footer {
 	background-color: var(--card-color);
 	border-radius: 0.75rem;
 	margin: 5% auto;
+	z-index: 11;
 }
 .each-stat {
 	display: flex;
@@ -189,7 +190,7 @@ li span {
 .username {
 	color: yellow;
 	text-decoration: underline;
-	font-size: 1.25rem;
+	font-size: 1.15rem;
 }
 form {
 	display: flex;
@@ -218,12 +219,20 @@ textarea {
 textarea::placeholder,
 input::placeholder {
 	color: white;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 }
 ul h3 {
 	color: white;
 	text-align: center;
 	text-decoration: underline;
+}
+.comment-btn {
+	padding: 0.75rem;
+	font-size: 1rem;
+	background: transparent;
+	color: white;
+	border-radius: 0.5rem;
+	cursor: pointer;
 }
 @media screen and (min-width: 768px) {
 	.popup {
@@ -275,5 +284,10 @@ ul h3 {
 		display: flex;
 		gap: 2rem;
 		flex-direction: row;
+		align-items: center;
+	}
+	.comment-btn {
+		font-size: 1.25rem;
+		padding: 0.5rem;
 	}
 }

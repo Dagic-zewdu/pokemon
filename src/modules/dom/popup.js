@@ -103,19 +103,27 @@ const renderPopup = async id => {
 							<span class="user-message">Message</span>
 						</p>
 					</div>
-					<form action="post">
-						<input type="text" placeholder="Your name" />
-						<textarea type="" row="3" placeholder="Leave your message"></textarea>
+					<form action="post" class="form">
+						<input id="name" class="input-name" type="text" placeholder="Your name" required />
+						<textarea class="input-name" type="text" id="comment" name="comment" row="3" placeholder="Leave your message" required></textarea>
+                        <button type="submit" class="comment-btn">Comment</button>
 					</form>
 				</div>
 			</div>`;
 	container.innerHTML = html;
+	const closeBtn = document.querySelector('.close-btn');
+	closeBtn.addEventListener('click', () => {
+		container.hidden = true;
+	});
+	const form = document.querySelector('.form');
+	form.addEventListener('submit', async e => {
+		e.preventDefault();
+		const inputName = document.querySelector('.input-name');
+		const inputMessage = document.querySelector('.input-message');
+
+		inputName.value = '';
+		inputMessage.value = '';
+	});
 };
 
 export { renderPopup };
-
-container.addEventListener('click', e => {
-	if (e.target.closest('.close-btn')) {
-		container.hidden = true;
-	}
-});
