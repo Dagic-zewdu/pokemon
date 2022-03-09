@@ -114,6 +114,8 @@ const renderPopup = async id => {
 
 export { renderPopup };
 
-{
-	/* <span class="electric type-popup">Electric</span>; */
-}
+container.addEventListener('click', e => {
+	if (e.target.closest('.close-btn')) {
+		container.hidden = true;
+	}
+});
