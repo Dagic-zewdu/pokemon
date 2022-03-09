@@ -15,7 +15,7 @@ const fillAllCards = async results => {
 					<img
 						src=${data.sprites.other.home.front_shiny}
 						class="pokemon-img"
-						alt=""
+						alt="${result.name} image"
 					/>
 				</div>
 				<div class="card-info">
@@ -42,4 +42,4 @@ const types = arr => {
 	return html;
 };
 
-export { fillAllCards };
+export { fillAllCards, types };
