@@ -141,3 +141,24 @@ li span {
 	cursor: pointer;
 	color: white;
 }
+.popup-img {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+.popup-img img {
+	width: 14rem;
+	height: 14rem;
+}
+.stats {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.popup-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
