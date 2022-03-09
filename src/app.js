@@ -1,6 +1,6 @@
 import './styles/style.css';
 import './styles/main-body.css';
-import { getPokemon, getPokemonList, getPokemonByHabitat } from './modules/api/fetch';
+import { getPokemonList, getPokemonByHabitat } from './modules/api/fetch';
 import { fillAllCards } from './modules/dom/render';
 import { likeCard } from './modules/dom/handleLikes';
 

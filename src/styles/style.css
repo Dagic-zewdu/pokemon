@@ -214,6 +214,12 @@ li span {
 	text-decoration: underline;
 	font-size: 1.15rem;
 }
+.user-message {
+	font-size: 1.15rem;
+}
+.date {
+	font-size: 1rem;
+}
 form {
 	display: flex;
 	gap: 2rem;
@@ -234,14 +240,14 @@ textarea {
 	width: 70%;
 	background-color: transparent;
 	color: white;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	border-radius: 8px;
 	padding: 1rem;
 }
 textarea::placeholder,
 input::placeholder {
 	color: white;
-	font-size: 1.1rem;
+	font-size: 1rem;
 }
 ul h3 {
 	color: white;
@@ -256,6 +262,7 @@ ul h3 {
 	border-radius: 0.5rem;
 	cursor: pointer;
 }
+
 @media screen and (min-width: 768px) {
 	.site-title h2 {
 		font-size: 2rem;
@@ -301,9 +308,6 @@ ul h3 {
 	}
 	.popup-form {
 		width: 60%;
-	}
-	.date {
-		font-size: 1.25rem;
 	}
 	.messages {
 		gap: 1.25rem;
