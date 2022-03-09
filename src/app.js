@@ -8,8 +8,14 @@ let initial = 0;
 let scroll = true;
 const select = document.getElementById('select');
 const allCards = document.querySelector('.all-cards');
+const title = document.querySelector('.number-of-pokemon');
 
 const start = async () => {
+	const pokemon = await fetch('https://pokeapi.co/api/v2/pokemon');
+	const allPokemon = await pokemon.json();
+	const html = `<p class="number-of-pokemon">List of <span class="highlight">${allPokemon.count}</span> Pokémons and their details which can be sort based on their habitat</p>`;
+	title.innerHTML = '';
+	title.insertAdjacentHTML('beforeend', html);
 	const { results } = await getPokemonList();
 	fillAllCards(results);
 	window.addEventListener('scroll', page);

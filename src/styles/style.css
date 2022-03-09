@@ -57,7 +57,23 @@ body {
 	font-size: 1.5rem;
 	color: var(--orange);
 }
-
+.site-title {
+	margin-top: 4rem;
+	text-align: center;
+}
+.site-title h2 {
+	color: var(--light-yellow);
+	padding: 1rem;
+}
+.site-title p {
+	font-size: 1.2rem;
+	padding: 0 1rem;
+	color: white;
+}
+.highlight {
+	color: var(--orange);
+	font-weight: bold;
+}
 footer {
 	display: flex;
 	padding: 10px;
@@ -187,6 +203,10 @@ li span {
 	color: white;
 	display: flex;
 	gap: 0.5rem;
+	background-color: var(--background-color);
+	border: 2px solid var(--background-color);
+	padding: 1rem;
+	border-radius: 0.5rem;
 }
 
 .username {
@@ -237,6 +257,12 @@ ul h3 {
 	cursor: pointer;
 }
 @media screen and (min-width: 768px) {
+	.site-title h2 {
+		font-size: 2rem;
+	}
+	.site-title p {
+		font-size: 1.8rem;
+	}
 	.popup {
 		width: 50%;
 	}

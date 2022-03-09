@@ -5,6 +5,7 @@ const container = document.querySelector('.popup-section');
 const renderPopup = async id => {
 	const data = await getPokemon(id);
 	const comments = await getComments(id);
+	let count = comments.length === undefined ? 0 : comments.length;
 	const allComments =
 		comments?.error?.status == 400
 			? 'No comments found'
@@ -106,7 +107,7 @@ const renderPopup = async id => {
 					</ul>
 				</div>
 				<div class="popup-form">
-					<h3 class="popup-title">Comments</h3>
+					<h3 class="popup-title comment-count">Comments (${count})</h3>
 						<div class="messages">
 							${allComments}
 						</div>
@@ -134,11 +135,12 @@ const renderPopup = async id => {
 			inputName.value
 		}:</span>
 			<span class="user-message">${inputMessage.value}</span></p>`;
-		console.log(messages.textContent);
 		if (messages.textContent.trim() == 'No comments found') {
 			messages.textContent = '';
 		}
 		messages.insertAdjacentHTML('beforeend', html);
+		count++;
+		document.querySelector('.comment-count').innerText = `Comments (${count})`;
 		inputName.value = '';
 		inputMessage.value = '';
 	});
