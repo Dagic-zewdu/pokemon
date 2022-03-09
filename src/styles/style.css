@@ -101,3 +101,20 @@ footer {
 .white {
 	color: white;
 }
+.popup-section {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.popup {
+	position: relative;
+	width: 90vw;
+	background-color: var(--card-color);
+	border-radius: 0.75rem;
+	margin: 5% auto;
+}
