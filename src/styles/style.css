@@ -118,3 +118,26 @@ footer {
 	border-radius: 0.75rem;
 	margin: 5% auto;
 }
+.each-stat {
+	display: flex;
+	gap: 1.5rem;
+	justify-content: center;
+	align-items: center;
+}
+svg {
+	height: 2rem;
+	width: 2rem;
+	color: var(--light-yellow);
+}
+li span {
+	font-size: 1.25rem;
+	color: white;
+}
+
+.close-btn {
+	text-align: left;
+	margin-left: 90%;
+	margin-top: 1.5rem;
+	cursor: pointer;
+	color: white;
+}
