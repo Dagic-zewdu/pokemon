@@ -2,19 +2,18 @@ import './styles/style.css';
 import './styles/main-body.css';
 import { getPokemon, getPokemonList, getPokemonByHabitat } from './modules/api/fetch';
 import { fillAllCards } from './modules/dom/render';
+import { likeCard } from './modules/dom/handleLikes';
 
-let initial = 20;
+let initial = 0;
 let scroll = true;
 const select = document.getElementById('select');
 const allCards = document.querySelector('.all-cards');
-const value = +select.value;
-
-// fillAllCards(initial);
 
 const start = async () => {
 	const { results } = await getPokemonList();
 	fillAllCards(results);
 	window.addEventListener('scroll', page);
+	likeCard();
 };
 
 start();

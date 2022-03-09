@@ -1,32 +1,35 @@
-// import baseUrl from './base-url';
-// import axios from 'axios';
+const key = 'A1FaHaIXEojEjknuBOqG';
+const invUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${key}`;
 
-// let baseUrl = axios.create({
-// 	baseURL: 'https://pokeapi.co/api/v2/pokemon',
-// });
-
-const getPokemonList = async (offset = 20) => {
+const getPokemonList = async (offset = 0) => {
 	const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`);
 	const data = await res.json();
 	return data;
-
-	// const res = await baseUrl.get(`?offset${offset}=&limit=20`);
 };
 
 const getPokemon = async name => {
 	const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
 	const data = await res.json();
 	return data;
-	// const res = await baseUrl.get(`/${name}`);
-	// return res.data;
 };
 
 const getPokemonByHabitat = async habitat => {
 	const res = await fetch(`https://pokeapi.co/api/v2/pokemon-habitat/${habitat}`);
 	const data = await res.json();
 	return data;
-	// const res = await baseUrl.get(`-habitat/${habitat}`);
-	// return res.data;
 };
 
-export { getPokemonList, getPokemon, getPokemonByHabitat };
+const getLikes = async () => {
+	const res = await fetch(`${invUrl}/likes/`);
+	const data = await res.json();
+	return data;
+};
+const postLikes = async like => {
+	const res = await fetch(`${invUrl}/likes/`, {
+		method: 'POST',
+		headers: { 'Content-type': 'application/json; charset=UTF-8' },
+		body: JSON.stringify(like),
+	});
+};
+
+export { getPokemonList, getPokemon, getPokemonByHabitat, postLikes, getLikes };

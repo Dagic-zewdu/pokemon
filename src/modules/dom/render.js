@@ -1,12 +1,16 @@
-import { getPokemonList, getPokemon, getPokemonByHabitat } from '../api/fetch';
-// import { scroll } from '../../app.js';
+import { getPokemonList, getPokemon, getPokemonByHabitat, getLikes } from '../api/fetch';
+import { likeCard, liked } from './handleLikes';
 
 const allCards = document.querySelector('.all-cards');
 
 const fillAllCards = async results => {
+	const allLikes = await getLikes();
 	results.forEach(async result => {
 		const data = await getPokemon(result.name);
-		const html = `<div class="card">
+		let ifLikes = allLikes.find(el => el.item_id == data.id);
+		const likes = ifLikes ? ifLikes.likes : '';
+		const like = liked.includes(data.id) ? '❤️' : '🖤';
+		const html = `<div class="card" data-id=${data.id}>
 				<div class="card-img">
 					<img
 						src=${data.sprites.other.home.front_shiny}
@@ -21,7 +25,9 @@ const fillAllCards = async results => {
                         ${types(data.types)}
 						</div>
 					</div>
-					<div class="likes">💝</div>
+					<div class="likes"><span class="heart" id=${
+						data.id
+					}>${like}</span> <span class="count">${likes}</span></div>
 				</div>
 			</div>`;
 		allCards.insertAdjacentHTML('beforeend', html);

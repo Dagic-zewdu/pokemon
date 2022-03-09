@@ -1,53 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>PokemonDB</title>
-	</head>
+const container = document.querySelector('.popup-section');
 
-	<body>
-		<header class="header">
-			<div class="logo">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1200px-Pok%C3%A9_Ball_icon.svg.png"
-					alt="logo-img"
-				/>
-				<span>Pokemon</span>
-			</div>
-			<select name="" id="select">
-				<option value="0">All</option>
-				<option value="1">Cave</option>
-				<option value="2">Forest</option>
-				<option value="3">Grass Land</option>
-				<option value="4">Mountain</option>
-				<option value="5">Rare</option>
-				<option value="7">Water</option>
-			</select>
-		</header>
-		<main class="all-cards">
-			<!-- <div class="card">
-				<div class="card-img">
-					<img
-						src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/1.png"
-						class="pokemon-img"
-						alt=""
-					/>
-				</div>
-				<div class="card-info">
-					<div class="info">
-						<h3 class="title">Bulbasaur</h3>
-						<div class="category">
-							<span>grass</span>
-						</div>
-					</div>
-					<div class="likes">💝</div>
-				</div>
-			</div> -->
-		</main>
-		<section class="popup-section">
-			<div class="popup">
+const renderPopup = async data => {
+	container.innerHTML = '';
+	const html = `<div class="popup">
 				<svg class="close-btn" viewBox="0 0 24 24">
 					<path
 						fill="currentColor"
@@ -57,8 +12,8 @@
 				<div class="popup-header">
 					<div class="popup-img">
 						<img
-							src="https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png"
-							alt="pikachu"
+							src=""
+							alt=""
 						/>
 						<h3 class="popup-title">Pikachu</h3>
 						<span class="electric type-popup">Electric</span>
@@ -146,39 +101,5 @@
 						<textarea type="" row="3" placeholder="Leave your message"></textarea>
 					</form>
 				</div>
-			</div>
-		</section>
-		<footer>
-			<div class="footer-img-container">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1200px-Pok%C3%A9_Ball_icon.svg.png"
-					alt=""
-					class="footer-logo-img"
-				/>
-			</div>
-			<div class="footer-links-container">
-				<h4 class="mx-10 white">Developed by</h4>
-				<ul class="contributor-list">
-					<li>
-						<a href="https://github.com/Dagic-zewdu">
-							<img
-								src="https://avatars.githubusercontent.com/u/68595873?v=4"
-								alt=""
-								class="profile-photo"
-							/>
-						</a>
-					</li>
-					<li>
-						<a href="https://github.com/muneebulrehman">
-							<img
-								src="https://avatars.githubusercontent.com/u/33268927?v=4"
-								alt=""
-								class="profile-photo"
-							/>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</footer>
-	</body>
-</html>
+			</div>`;
+};

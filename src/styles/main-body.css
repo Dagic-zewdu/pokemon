@@ -14,6 +14,7 @@ main {
 	opacity: 0.9;
 	margin: 1rem auto;
 	width: 25rem;
+	cursor: pointer;
 }
 .pokemon-img {
 	display: block;
@@ -43,6 +44,16 @@ main {
 	letter-spacing: 2px;
 	text-transform: capitalize;
 	margin-right: 0.25rem;
+}
+.likes {
+	font-size: 1.5rem;
+	position: relative;
+}
+.count {
+	color: white;
+	position: absolute;
+	top: 70%;
+	right: 10%;
 }
 
 /* Medium devices (landscape tablets, 768px and up)  */
