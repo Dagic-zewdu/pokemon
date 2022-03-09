@@ -5,14 +5,13 @@ const container = document.querySelector('.popup-section');
 const renderPopup = async id => {
 	const data = await getPokemon(id);
 	const comments = await getComments(id);
-	console.log(comments);
 	const allComments =
 		comments?.error?.status == 400
 			? 'No comments found'
 			: comments
 					.map(comment => {
-						return `<span class="date">${comment.creation_date}</span> | <span class="username">${comment.username}:</span>
-							<span class="user-message">${comment.comment}</span>`;
+						return `<p><span class="date">${comment.creation_date}</span> | <span class="username">${comment.username}:</span>
+							<span class="user-message">${comment.comment}</span></p>`;
 					})
 					.join('');
 	container.innerHTML = '';
@@ -108,11 +107,9 @@ const renderPopup = async id => {
 				</div>
 				<div class="popup-form">
 					<h3 class="popup-title">Comments</h3>
-					<div class="messages">
-						<p class="messages">
+						<div class="messages">
 							${allComments}
-						</p>
-					</div>
+						</div>
 					<form action="post" class="form">
 						<input id="name" class="input-name" type="text" placeholder="Your name" required />
 						<textarea class="input-name" type="text" id="comment" name="comment" row="3" placeholder="Leave your message" required></textarea>
@@ -126,16 +123,21 @@ const renderPopup = async id => {
 		container.hidden = true;
 	});
 	const messages = document.querySelector('.messages');
+
 	const form = document.querySelector('.form');
 	form.addEventListener('submit', async e => {
 		e.preventDefault();
 		const inputName = document.querySelector('.input-name');
 		const inputMessage = document.getElementById('comment');
 		postComments(data.id, inputName.value, inputMessage.value);
-		const html = `<span class="date">${newDate()}</span> | <span class="username">${
+		const html = `<p><span class="date">${newDate()}</span> | <span class="username">${
 			inputName.value
 		}:</span>
-			<span class="user-message">${inputMessage.value}</span>`;
+			<span class="user-message">${inputMessage.value}</span></p>`;
+		console.log(messages.textContent);
+		if (messages.textContent.trim() == 'No comments found') {
+			messages.textContent = '';
+		}
 		messages.insertAdjacentHTML('beforeend', html);
 		inputName.value = '';
 		inputMessage.value = '';
@@ -143,11 +145,6 @@ const renderPopup = async id => {
 };
 
 export { renderPopup };
-
-{
-	/* <span class="date">date</span> | <span class="username">Username:</span>
-							<span class="user-message">Message</span> */
-}
 
 const newDate = () => {
 	const date = new Date();

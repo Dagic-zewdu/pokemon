@@ -181,6 +181,8 @@ li span {
 	padding-bottom: 2rem;
 }
 .messages {
+	display: flex;
+	flex-direction: column;
 	font-size: 1.25rem;
 	color: white;
 	display: flex;
