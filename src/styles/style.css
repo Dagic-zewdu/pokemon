@@ -225,3 +225,55 @@ ul h3 {
 	text-align: center;
 	text-decoration: underline;
 }
+@media screen and (min-width: 768px) {
+	.popup {
+		width: 50%;
+	}
+	.type-popup {
+		font-size: 1.5rem;
+		padding: 0.25rem 0.5rem;
+		border-radius: 0.4rem;
+	}
+	.popup-header {
+		justify-content: flex-end;
+		margin-right: 10%;
+		gap: 15rem;
+	}
+	.popup-title {
+		font-size: 1.75rem;
+	}
+	ul h3 {
+		font-size: 1.5rem;
+	}
+	svg {
+		height: 3.5rem;
+		width: 3.5rem;
+	}
+	.popup-img img {
+		width: 20rem;
+		height: 20rem;
+	}
+	.close-btn {
+		margin-left: 92%;
+	}
+	.popup-img {
+		gap: 2rem;
+	}
+	li span {
+		font-size: 2rem;
+	}
+	.popup-form {
+		width: 60%;
+	}
+	.date {
+		font-size: 1.25rem;
+	}
+	.messages {
+		gap: 1.25rem;
+	}
+	form {
+		display: flex;
+		gap: 2rem;
+		flex-direction: row;
+	}
+}
