@@ -1,22 +1,23 @@
 import { getPokemon, getComments, postComments } from '../api/fetch';
 import { types } from './render';
+import { spinner } from './selector';
+
 const container = document.querySelector('.popup-section');
 
-const renderPopup = async id => {
-	const data = await getPokemon(id);
-	const comments = await getComments(id);
-	const allComments =
-		comments?.error?.status == 400
-			? 'No comments found'
-			: comments
-					.map(comment => {
-						return `<p><span class="date">${comment.creation_date}</span> | <span class="username">${comment.username}:</span>
-							<span class="user-message">${comment.comment}</span></p>`;
-					})
-					.join('');
-	container.innerHTML = '';
-	container.hidden = false;
-	const html = `<div class="popup">
+export const newDate = () => {
+  const date = new Date();
+  return date.toISOString().split('T')[0];
+};
+const renderPopup = async (id) => {
+  container.innerHTML = spinner;
+  const data = await getPokemon(id);
+  const comments = await getComments(id);
+  const allComments = comments?.error?.status === 400 ? 'No comments found' : comments
+    .map((comment) => `<p><span class="date">${comment.creation_date}</span> | <span class="username">${comment.username}:</span>
+  <span class="user-message">${comment.comment}</span></p>`)
+		    .join('');
+  container.hidden = false;
+  const html = `<div class="popup">
 				<svg class="close-btn" viewBox="0 0 24 24">
 					<path
 						fill="currentColor"
@@ -117,36 +118,31 @@ const renderPopup = async id => {
 					</form>
 				</div>
 			</div>`;
-	container.innerHTML = html;
-	const closeBtn = document.querySelector('.close-btn');
-	closeBtn.addEventListener('click', () => {
-		container.hidden = true;
-	});
-	const messages = document.querySelector('.messages');
+  container.innerHTML = html;
+  const closeBtn = document.querySelector('.close-btn');
+  closeBtn.addEventListener('click', () => {
+    container.hidden = true;
+    document.body.style.overflow = 'auto';
+  });
+  const messages = document.querySelector('.messages');
 
-	const form = document.querySelector('.form');
-	form.addEventListener('submit', async e => {
-		e.preventDefault();
-		const inputName = document.querySelector('.input-name');
-		const inputMessage = document.getElementById('comment');
-		postComments(data.id, inputName.value, inputMessage.value);
-		const html = `<p><span class="date">${newDate()}</span> | <span class="username">${
-			inputName.value
-		}:</span>
+  const form = document.querySelector('.form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const inputName = document.querySelector('.input-name');
+    const inputMessage = document.getElementById('comment');
+    postComments(data.id, inputName.value, inputMessage.value);
+    const html = `<p><span class="date">${newDate()}</span> | <span class="username">${
+      inputName.value
+    }:</span>
 			<span class="user-message">${inputMessage.value}</span></p>`;
-		console.log(messages.textContent);
-		if (messages.textContent.trim() == 'No comments found') {
-			messages.textContent = '';
-		}
-		messages.insertAdjacentHTML('beforeend', html);
-		inputName.value = '';
-		inputMessage.value = '';
-	});
+    if (messages.textContent.trim() === 'No comments found') {
+      messages.textContent = '';
+    }
+    messages.insertAdjacentHTML('beforeend', html);
+    inputName.value = '';
+    inputMessage.value = '';
+  });
 };
 
 export { renderPopup };
-
-const newDate = () => {
-	const date = new Date();
-	return date.toISOString().split('T')[0];
-};

@@ -1,16 +1,20 @@
-import { getPokemonList, getPokemon, getPokemonByHabitat, getLikes } from '../api/fetch';
+import {
+  getPokemonList, getPokemon, getPokemonByHabitat, getLikes,
+} from '../api/fetch';
 import { likeCard, liked } from './handleLikes';
+import { selectItem, selectMultipleItem, spinner } from './selector';
 
 const allCards = document.querySelector('.all-cards');
-
-const fillAllCards = async results => {
-	const allLikes = await getLikes();
-	results.forEach(async result => {
-		const data = await getPokemon(result.name);
-		let ifLikes = allLikes.find(el => el.item_id == data.id);
-		const likes = ifLikes ? ifLikes.likes : '';
-		const like = liked.includes(data.id) ? '❤️' : '🖤';
-		const html = `<div class="card" data-id=${data.id}>
+const spinnerContainer = selectItem('.spinner-section');
+const fillAllCards = async (results) => {
+  spinnerContainer.innerHTML = spinner;
+  const allLikes = await getLikes();
+  results.forEach(async (result) => {
+    const data = await getPokemon(result.name);
+    const ifLikes = allLikes.find((el) => el.item_id === data.id);
+    const likes = ifLikes ? ifLikes.likes : '';
+    const like = liked.includes(data.id) ? '❤️' : '🖤';
+    const html = `<div class="card" data-id=${data.id}>
 				<div class="card-img">
 					<img
 						src=${data.sprites.other.home.front_shiny}
@@ -26,20 +30,23 @@ const fillAllCards = async results => {
 						</div>
 					</div>
 					<div class="likes"><span class="heart" id=${
-						data.id
-					}>${like}</span> <span class="count">${likes}</span></div>
+  data.id
+}>${like}</span> <span class="count">${likes}</span></div>
 				</div>
 			</div>`;
-		allCards.insertAdjacentHTML('beforeend', html);
-	});
+
+    allCards.insertAdjacentHTML('beforeend', html);
+  });
+  console.log(spinnerContainer);
+  spinnerContainer.innerHTML = '';
 };
 
-const types = arr => {
-	let html = '';
-	arr.forEach(el => {
-		html += `<span class=${el.type.name}>${el.type.name}</span>`;
-	});
-	return html;
+const types = (arr) => {
+  let html = '';
+  arr.forEach((el) => {
+    html += `<span class=${el.type.name}>${el.type.name}</span>`;
+  });
+  return html;
 };
 
 export { fillAllCards, types };
