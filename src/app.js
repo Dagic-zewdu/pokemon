@@ -1,6 +1,6 @@
 import './styles/style.css';
 import './styles/main-body.css';
-import { getPokemonList, getPokemonByHabitat,getPokemonLength } from './modules/api/fetch';
+import { getPokemonList, getPokemonByHabitat, getPokemonLength } from './modules/api/fetch';
 import { fillAllCards } from './modules/dom/render';
 import { likeCard } from './modules/dom/handleLikes';
 import './styles/spinner.css';
@@ -9,7 +9,7 @@ let initial = 0;
 let scroll = true;
 const select = document.getElementById('select');
 const allCards = document.querySelector('.all-cards');
-const title = document.querySelector('.number-of-pokemon');
+const title = document.querySelector('.highlight');
 
 const page = async () => {
   if (scroll && window.scrollY + window.innerHeight >= document.body.offsetHeight - 400) {
@@ -22,9 +22,8 @@ const page = async () => {
 };
 const start = async () => {
   const length = await getPokemonLength();
-  const html = `<p class="number-of-pokemon">List of <span class="highlight">${length}</span> Pokémons and their details which can be sort based on their habitat</p>`;
   title.innerHTML = '';
-  title.insertAdjacentHTML('beforeend', html);
+  title.insertAdjacentHTML('beforeend', length);
   const { results } = await getPokemonList();
   fillAllCards(results);
   window.addEventListener('scroll', page);
