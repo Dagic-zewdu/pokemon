@@ -113,7 +113,7 @@ const renderPopup = async (id) => {
 					</ul>
 				</div>
 				<div class="popup-form">
-					<h3 class="popup-title">Comments</h3>
+					<h3 class="popup-title comment-count">Comments (${count})</h3>
 						<div class="messages">
 							${allComments}
 						</div>
