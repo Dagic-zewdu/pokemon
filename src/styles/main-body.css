@@ -3,7 +3,7 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1.5rem;
-	margin-top: 4rem;
+	margin-top: 1rem;
 	margin-bottom: 2rem;
 }
 .card {
@@ -62,6 +62,9 @@ main {
 	}
 	.card-info {
 		padding: 0.5rem;
+	}
+	main {
+		margin-top: 2rem;
 	}
 }
 

@@ -57,7 +57,23 @@ body {
 	font-size: 1.5rem;
 	color: var(--orange);
 }
-
+.site-title {
+	margin-top: 4rem;
+	text-align: center;
+}
+.site-title h2 {
+	color: var(--light-yellow);
+	padding: 1rem;
+}
+.site-title p {
+	font-size: 1.2rem;
+	padding: 0 1rem;
+	color: white;
+}
+.highlight {
+	color: var(--orange);
+	font-weight: bold;
+}
 footer {
 	display: flex;
 	padding: 10px;
@@ -187,12 +203,22 @@ li span {
 	color: white;
 	display: flex;
 	gap: 0.5rem;
+	background-color: var(--background-color);
+	border: 2px solid var(--background-color);
+	padding: 1rem;
+	border-radius: 0.5rem;
 }
 
 .username {
 	color: yellow;
 	text-decoration: underline;
 	font-size: 1.15rem;
+}
+.user-message {
+	font-size: 1.15rem;
+}
+.date {
+	font-size: 1rem;
 }
 form {
 	display: flex;
@@ -214,14 +240,14 @@ textarea {
 	width: 70%;
 	background-color: transparent;
 	color: white;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	border-radius: 8px;
 	padding: 1rem;
 }
 textarea::placeholder,
 input::placeholder {
 	color: white;
-	font-size: 1.1rem;
+	font-size: 1rem;
 }
 ul h3 {
 	color: white;
@@ -236,7 +262,14 @@ ul h3 {
 	border-radius: 0.5rem;
 	cursor: pointer;
 }
+
 @media screen and (min-width: 768px) {
+	.site-title h2 {
+		font-size: 2rem;
+	}
+	.site-title p {
+		font-size: 1.8rem;
+	}
 	.popup {
 		width: 50%;
 	}
@@ -275,9 +308,6 @@ ul h3 {
 	}
 	.popup-form {
 		width: 60%;
-	}
-	.date {
-		font-size: 1.25rem;
 	}
 	.messages {
 		gap: 1.25rem;

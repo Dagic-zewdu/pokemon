@@ -38,7 +38,7 @@ const getComments = async id => {
 		const data = await res.json();
 		return data;
 	} catch (err) {
-		throw new Error(err);
+		console.error('error found' + err);
 	}
 };
 

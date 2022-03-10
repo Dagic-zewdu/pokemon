@@ -1,8 +1,6 @@
-import {
-  getPokemonList, getPokemon, getPokemonByHabitat, getLikes,
-} from '../api/fetch';
-import { likeCard, liked } from './handleLikes';
-import { selectItem, selectMultipleItem, spinner } from './selector';
+import { getPokemon, getLikes } from '../api/fetch';
+import { liked } from './handleLikes';
+import { selectItem, spinner } from './selector';
 
 const allCards = document.querySelector('.all-cards');
 const spinnerContainer = selectItem('.spinner-section');
@@ -37,7 +35,6 @@ const fillAllCards = async (results) => {
 
     allCards.insertAdjacentHTML('beforeend', html);
   });
-  console.log(spinnerContainer);
   spinnerContainer.innerHTML = '';
 };
 
