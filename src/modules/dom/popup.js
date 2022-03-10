@@ -4,16 +4,18 @@ import { spinner } from './selector';
 
 const container = document.querySelector('.popup-section');
 
+export const newDate = () => {
+  const date = new Date();
+  return date.toISOString().split('T')[0];
+};
 const renderPopup = async (id) => {
+  container.innerHTML = spinner;
   const data = await getPokemon(id);
   const comments = await getComments(id);
-  let count = comments.length === undefined ? 0 : comments.length;
-  const allComments =		comments?.error?.status == 400
-		  ? 'No comments found'
-		  : comments
-		    .map((comment) => `<p><span class="date">${comment.creation_date}</span> | <span class="username">${comment.username}:</span>
-							<span class="user-message">${comment.comment}</span></p>`)
-		    .join('');
+  const allComments = comments?.error?.status === 400 ? 'No comments found' : comments
+    .map((comment) => `<p><span class="date">${comment.creation_date}</span> | <span class="username">${comment.username}:</span>
+  <span class="user-message">${comment.comment}</span></p>`)
+    .join('');
   container.innerHTML = '';
   container.hidden = false;
   const html = `<div class="popup">
@@ -106,7 +108,7 @@ const renderPopup = async (id) => {
 					</ul>
 				</div>
 				<div class="popup-form">
-					<h3 class="popup-title comment-count">Comments (${count})</h3>
+					<h3 class="popup-title">Comments</h3>
 						<div class="messages">
 							${allComments}
 						</div>
@@ -121,7 +123,6 @@ const renderPopup = async (id) => {
   const closeBtn = document.querySelector('.close-btn');
   closeBtn.addEventListener('click', () => {
     container.hidden = true;
-    document.body.style.overflow = 'auto';
   });
   const messages = document.querySelector('.messages');
 
@@ -134,13 +135,11 @@ const renderPopup = async (id) => {
     const html = `<p><span class="date">${newDate()}</span> | <span class="username">${
       inputName.value
     }:</span>
-     <span class="user-message">${inputMessage.value}</span></p>`;
-    if (messages.textContent.trim() == 'No comments found') {
+			<span class="user-message">${inputMessage.value}</span></p>`;
+    if (messages.textContent.trim() === 'No comments found') {
       messages.textContent = '';
     }
     messages.insertAdjacentHTML('beforeend', html);
-    count += 1;
-    document.querySelector('.comment-count').innerText = `Comments (${count})`;
     inputName.value = '';
     inputMessage.value = '';
   });
