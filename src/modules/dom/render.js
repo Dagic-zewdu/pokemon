@@ -6,8 +6,10 @@ import { selectItem, spinner } from './selector';
 const allCards = document.querySelector('.all-cards');
 
 const spinnerContainer = selectItem('.spinner-section');
+
 const fillAllCards = async (results) => {
   spinnerContainer.innerHTML = spinner;
+  spinnerContainer.style.display = 'flex';
   const allLikes = await getLikes();
   results.forEach(async (result) => {
     const data = await getPokemon(result.name);
@@ -39,6 +41,7 @@ const fillAllCards = async (results) => {
     allCards.insertAdjacentHTML('beforeend', html);
   });
   spinnerContainer.innerHTML = '';
+  spinnerContainer.style.display = 'none';
 };
 
 const types = (arr) => {
