@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1646917565431" clover="3.2.0">
-  <project timestamp="1646917565431" name="All files">
+<coverage generated="1646921988666" clover="3.2.0">
+  <project timestamp="1646921988667" name="All files">
     <metrics statements="36" coveredstatements="16" conditionals="3" coveredconditionals="2" methods="9" coveredmethods="2" elements="48" coveredelements="20" complexity="0" loc="36" ncloc="36" packages="1" files="1" classes="1"/>
     <file name="fetch.js" path="/Users/Dagic/pokemon/src/modules/api/fetch.js">
       <metrics statements="36" coveredstatements="16" conditionals="3" coveredconditionals="2" methods="9" coveredmethods="2"/>
@@ -28,18 +28,18 @@
       <line num="31" count="0" type="stmt"/>
       <line num="33" count="2" type="stmt"/>
       <line num="34" count="0" type="stmt"/>
-      <line num="41" count="2" type="stmt"/>
-      <line num="42" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="43" count="1" type="stmt"/>
-      <line num="47" count="2" type="stmt"/>
-      <line num="48" count="0" type="stmt"/>
-      <line num="49" count="0" type="stmt"/>
+      <line num="43" count="2" type="stmt"/>
+      <line num="44" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="45" count="1" type="stmt"/>
+      <line num="49" count="2" type="stmt"/>
       <line num="50" count="0" type="stmt"/>
       <line num="51" count="0" type="stmt"/>
       <line num="52" count="0" type="stmt"/>
+      <line num="53" count="0" type="stmt"/>
       <line num="54" count="0" type="stmt"/>
-      <line num="58" count="2" type="stmt"/>
-      <line num="59" count="0" type="stmt"/>
+      <line num="56" count="0" type="stmt"/>
+      <line num="60" count="2" type="stmt"/>
+      <line num="61" count="0" type="stmt"/>
     </file>
   </project>
 </coverage>
