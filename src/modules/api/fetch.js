@@ -38,9 +38,11 @@ const postLikes = async (like) => {
   });
 };
 
+// For testing purposes.
+// eslint-disable-next-line consistent-return
 const commentsLength = (data) => {
   if (data.length) {
-    document.querySelector('.comment-count').innerHTML += ` (${data.length})`;
+    document.querySelector('.comment-counts').innerHTML += ` (${data.length})`;
   }
 };
 

@@ -1,8 +1,8 @@
 /* eslint-disable quotes */
 import { commentsLength } from '../api/fetch';
 
-document.body.innerHTML = `<h3 class="popup-title comment-count">Comments</h3>`;
-const title = document.querySelector('.popup-title');
+document.body.innerHTML = `<h3 class="popup-titles comment-counts" hidden>Comments</h3>`;
+const title = document.querySelector('.popup-titles');
 
 describe('testing the comments', () => {
   test('testing for comments in dom', () => {
@@ -11,8 +11,8 @@ describe('testing the comments', () => {
   });
 
   test('testing for no comments in dom', () => {
-    document.body.innerHTML = `<h3 class="popup-title comment-count">Comments</h3>`;
+    document.body.innerHTML = `<h3 class="popup-titles comment-counts">Comments</h3>`;
     commentsLength({});
-    expect(document.querySelector('.popup-title').textContent).toBe('Comments');
+    expect(document.querySelector('.popup-titles').textContent).toEqual('Comments');
   });
 });
