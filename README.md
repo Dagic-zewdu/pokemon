@@ -21,7 +21,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://dagic-zewdu.github.io/pokemon/)
 
 ## Built With
 
