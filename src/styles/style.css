@@ -294,6 +294,18 @@ ul h3 {
   cursor: pointer;
 }
 
+@media screen and (min-width: 1100px) {
+  .popup {
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .popup {
+    max-width: 40%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .site-title h2 {
     font-size: 2rem;
@@ -304,7 +316,7 @@ ul h3 {
   }
 
   .popup {
-    width: 50%;
+    width: 85vw;
   }
 
   .type-popup {
@@ -316,7 +328,7 @@ ul h3 {
   .popup-header {
     justify-content: flex-end;
     margin-right: 10%;
-    gap: 15rem;
+    gap: 10rem;
   }
 
   .popup-title {
