@@ -19,6 +19,12 @@ const getPokemonByHabitat = async (habitat) => {
   return data;
 };
 
+const getPokemonLength = async () => {
+  const res = await fetch('https://pokeapi.co/api/v2/pokemon');
+  const data = await res.json();
+  return data.count;
+};
+
 const getLikes = async () => {
   const res = await fetch(`${invUrl}/likes/`);
   const data = await res.json();
@@ -32,10 +38,17 @@ const postLikes = async (like) => {
   });
 };
 
+const commentsLength = async (data) => {
+  if (data.length) {
+    document.querySelector('.comment-count').innerHTML += ` (${data.length})`;
+  }
+};
+
 const getComments = async (id) => {
   try {
     const res = await fetch(`${invUrl}/comments?item_id=${id}`);
     const data = await res.json();
+    await commentsLength(data);
     return data;
   } catch (err) {
     return (`error found${err}`);
@@ -58,6 +71,7 @@ export {
   getPokemonList,
   getPokemon,
   getPokemonByHabitat,
+  getPokemonLength,
   postLikes,
   getLikes,
   getComments,

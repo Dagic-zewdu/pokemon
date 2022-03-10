@@ -1,6 +1,6 @@
 import './styles/style.css';
 import './styles/main-body.css';
-import { getPokemonList, getPokemonByHabitat } from './modules/api/fetch';
+import { getPokemonList, getPokemonByHabitat,getPokemonLength } from './modules/api/fetch';
 import { fillAllCards } from './modules/dom/render';
 import { likeCard } from './modules/dom/handleLikes';
 import './styles/spinner.css';
@@ -21,9 +21,8 @@ const page = async () => {
   }
 };
 const start = async () => {
-  const pokemon = await fetch('https://pokeapi.co/api/v2/pokemon');
-  const allPokemon = await pokemon.json();
-  const html = `<p class="number-of-pokemon">List of <span class="highlight">${allPokemon.count}</span> Pokémons and their details which can be sort based on their habitat</p>`;
+  const length = await getPokemonLength();
+  const html = `<p class="number-of-pokemon">List of <span class="highlight">${length}</span> Pokémons and their details which can be sort based on their habitat</p>`;
   title.innerHTML = '';
   title.insertAdjacentHTML('beforeend', html);
   const { results } = await getPokemonList();
