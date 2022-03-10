@@ -1,0 +1,19 @@
+
+.spinner-section{
+    display: flex;
+    justify-content: center;
+    min-height: 70vh;
+}
+.spinner{
+    height: 60px;
+    animation: spin 1s infinite;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}

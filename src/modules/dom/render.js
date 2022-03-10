@@ -1,10 +1,13 @@
 import { getPokemon, getLikes } from '../api/fetch';
 // eslint-disable-next-line import/no-cycle
 import { liked } from './handleLikes';
+import { selectItem, spinner } from './selector';
 
 const allCards = document.querySelector('.all-cards');
 
+const spinnerContainer = selectItem('.spinner-section');
 const fillAllCards = async (results) => {
+  spinnerContainer.innerHTML = spinner;
   const allLikes = await getLikes();
   results.forEach(async (result) => {
     const data = await getPokemon(result.name);
@@ -35,6 +38,7 @@ const fillAllCards = async (results) => {
     /* eslint-enable */
     allCards.insertAdjacentHTML('beforeend', html);
   });
+  spinnerContainer.innerHTML = '';
 };
 
 const types = (arr) => {

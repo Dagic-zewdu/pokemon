@@ -7,6 +7,7 @@ import {
 import { types } from './render';
 
 const container = document.querySelector('.popup-section');
+
 const newDate = () => {
   const date = new Date();
   return date.toISOString().split('T')[0];
@@ -21,6 +22,7 @@ const renderPopup = async (id) => {
   container.innerHTML = '';
   container.hidden = false;
   /* eslint-disable */
+
   const html = `<div class="popup">
 				<svg class="close-btn" viewBox="0 0 24 24">
 					<path
@@ -111,7 +113,7 @@ const renderPopup = async (id) => {
 					</ul>
 				</div>
 				<div class="popup-form">
-					<h3 class="popup-title comment-count">Comments (${count})</h3>
+					<h3 class="popup-title">Comments</h3>
 						<div class="messages">
 							${allComments}
 						</div>
@@ -137,8 +139,7 @@ const renderPopup = async (id) => {
     const inputMessage = document.getElementById('comment');
     postComments(data.id, inputName.value, inputMessage.value);
     const html = `<p><span class="date">${newDate()}</span> | <span class="username">${
-      inputName.value
-    }:</span><span class="user-message">${inputMessage.value}</span></p>`;
+      inputName.value}:</span><span class="user-message">${inputMessage.value}</span></p>`;
     if (messages.textContent.trim() === 'No comments found') {
       messages.textContent = '';
     }
@@ -150,3 +151,4 @@ const renderPopup = async (id) => {
   });
 };
 export default renderPopup;
+

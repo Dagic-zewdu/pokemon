@@ -3,6 +3,7 @@ import './styles/main-body.css';
 import { getPokemonList, getPokemonByHabitat } from './modules/api/fetch';
 import { fillAllCards } from './modules/dom/render';
 import { likeCard } from './modules/dom/handleLikes';
+import './styles/spinner.css';
 
 let initial = 0;
 let scroll = true;
@@ -19,7 +20,6 @@ const page = async () => {
     scroll = true;
   }
 };
-
 const start = async () => {
   const pokemon = await fetch('https://pokeapi.co/api/v2/pokemon');
   const allPokemon = await pokemon.json();
