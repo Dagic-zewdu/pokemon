@@ -1,13 +1,15 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Pokemon Capstone project
+# PokemonDB: All things Pokémon
 
-> Project description paragraph with 30 words. 
+> This project contains all the listed pokemons and their stats. You can like and comment on each pokemon.
 
-![screenshot]()
+![screenshot](./src/images/Screenshot1.png)
+![screenshot](./src/images/Screenshot-mobile.png)
 
 Additional description about the project and its features.
 
+> Built using PokeAPI and Involvement API.
 ## Tools used
 
 - HTML
@@ -67,7 +69,7 @@ Your app is ready to be deployed!
 #### Cloning the project
 
 ```
-git clone https://github.com/your_url
+git clone https://github.com/https://github.com/Dagic-zewdu/pokemon/tree/dev
 ```
 
 ## Getting packages and debuging with Stylelint
@@ -114,6 +116,12 @@ npx eslint .
 
 ## Author
 
+👤 **Muneeb Ul Rehman**
+
+- GitHub: [@Muneeb](https://github.com/muneebulrehman)
+- Twitter: [@NeatCoder_](https://twitter.com/NeatCoder_)
+- LinkedIn: [Muneeb](https://www.linkedin.com/in/muneeb-ul-rehman-33903b159/)
+
 👤 **Dagic Zewdu Tilahun**
 
 - GitHub: [@Dagic-zewdu](https://github.com/Dagic-zewdu)
@@ -122,7 +130,7 @@ npx eslint .
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Dagic-zewdu/pokemon/issues).
 
 ## Show your support
 
