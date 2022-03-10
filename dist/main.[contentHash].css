@@ -369,3 +369,192 @@ ul h3 {
     padding: 0.5rem;
   }
 }
+
+main {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  height: 14rem;
+  background-color: var(--card-color);
+  border-radius: 0.75rem;
+  opacity: 0.9;
+  margin: 1rem auto;
+  width: 25rem;
+  cursor: pointer;
+}
+
+.pokemon-img {
+  display: block;
+  width: 9rem;
+  margin: 0 auto;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 2rem;
+}
+
+.title {
+  color: white;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.category {
+  margin-top: 0.5rem;
+  display: flex;
+}
+
+.category span {
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin-right: 0.25rem;
+}
+
+.likes {
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.count {
+  color: white;
+  position: absolute;
+  top: 70%;
+  right: 10%;
+}
+
+/* Medium devices (landscape tablets, 768px and up)  */
+@media only screen and (min-width: 992px) {
+  .card {
+    width: 30%;
+  }
+
+  .card-info {
+    padding: 0.5rem;
+  }
+
+  main {
+    margin-top: 2rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1300px) {
+  .card {
+    max-width: 20rem;
+  }
+}
+
+.grass {
+  background-color: lightgreen;
+}
+
+.normal {
+  background-color: rgb(226, 231, 177);
+}
+
+.fairy {
+  background-color: white;
+  color: black;
+}
+
+.fire {
+  background-color: red;
+  color: white;
+}
+
+.poison {
+  background-color: rgb(133, 69, 133);
+  color: white;
+}
+
+.electric {
+  background-color: rgb(233, 233, 17);
+}
+
+.ground {
+  background-color: burlywood;
+  color: white;
+}
+
+.water {
+  background-color: lightblue;
+}
+
+.bug {
+  background-color: lightpink;
+}
+
+.ghost {
+  background-color: grey;
+}
+
+.rock {
+  background-color: rgb(63, 18, 18);
+  color: white;
+}
+
+.steel {
+  background-color: silver;
+}
+
+.ice {
+  background-color: rgb(12, 184, 236);
+}
+
+.dark {
+  background-color: rgba(0, 0, 0, 0.418);
+  color: white;
+}
+
+.dragon {
+  background-color: rgb(184, 84, 84);
+  color: white;
+}
+
+.psychic {
+  background-color: rgba(48, 2, 109, 0.418);
+  color: white;
+}
+
+.fighting {
+  background-color: teal;
+}
+
+.flying {
+  background-color: skyblue;
+}
+
+
+.spinner-section {
+  display: flex;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.spinner {
+  height: 60px;
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

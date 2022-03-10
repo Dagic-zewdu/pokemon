@@ -1,5 +1,6 @@
 import { postLikes } from '../api/fetch';
-import { renderPopup } from './popup';
+// eslint-disable-next-line import/no-cycle
+import renderPopup from './popup';
 
 const allCards = document.querySelector('.all-cards');
 const liked = localStorage.getItem('liked') ? JSON.parse(localStorage.getItem('liked')) : [];

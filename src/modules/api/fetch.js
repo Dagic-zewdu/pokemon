@@ -19,27 +19,39 @@ const getPokemonByHabitat = async (habitat) => {
   return data;
 };
 
+const getPokemonLength = async () => {
+  const res = await fetch('https://pokeapi.co/api/v2/pokemon');
+  const data = await res.json();
+  return data.count;
+};
+
 const getLikes = async () => {
   const res = await fetch(`${invUrl}/likes/`);
   const data = await res.json();
   return data;
 };
 const postLikes = async (like) => {
-  const res = await fetch(`${invUrl}/likes/`, {
+  await fetch(`${invUrl}/likes/`, {
     method: 'POST',
     headers: { 'Content-type': 'application/json; charset=UTF-8' },
     body: JSON.stringify(like),
   });
 };
 
+const commentsLength = (data) => {
+  if (data.length) {
+    document.querySelector('.comment-count').innerHTML += ` (${data.length})`;
+  }
+};
+
 const getComments = async (id) => {
   try {
     const res = await fetch(`${invUrl}/comments?item_id=${id}`);
     const data = await res.json();
+    commentsLength(data);
     return data;
   } catch (err) {
-    console.error(`error found${err}`);
-    return [];
+    return (`error found${err}`);
   }
 };
 
@@ -59,9 +71,10 @@ export {
   getPokemonList,
   getPokemon,
   getPokemonByHabitat,
+  getPokemonLength,
   postLikes,
   getLikes,
   getComments,
   postComments,
-  invUrl,
+  commentsLength,
 };
