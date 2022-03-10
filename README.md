@@ -1,2 +1,3 @@
-# js-lintor-template
-This template is set up for js template
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+# PokemonDB: All things Pokémon
