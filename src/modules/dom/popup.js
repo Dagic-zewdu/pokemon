@@ -151,4 +151,3 @@ const renderPopup = async (id) => {
   });
 };
 export default renderPopup;
-
