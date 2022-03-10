@@ -17,6 +17,6 @@
   },
   "ignorePatterns": [
     "dist/",
-    "build/"
+    "docs/"
   ]
 }
